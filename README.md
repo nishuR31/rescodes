@@ -86,8 +86,3 @@ Feel free to contribute, create issues, or suggest enhancements via GitHub!
 Happy Diwali..
 
 
-
-This is the **complete markdown** for your README, without breaks. It includes all the relevant information users need to install, use, and understand your package. You can copy-paste this into your `README.md` file.
-
-Let me know if you need further adjustments!
-```
