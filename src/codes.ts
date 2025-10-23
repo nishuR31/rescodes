@@ -1,11 +1,15 @@
-const informational = {
-  "continue": 100,
+interface Code {
+  [msg: string]: number;
+}
+
+const informational = <Code>{
+  continue: 100,
   switchingProtocols: 101,
   processing: 102,
   earlyHints: 103,
 };
 
-const successful = {
+const successful = <Code>{
   ok: 200,
   created: 201,
   accepted: 202,
@@ -18,19 +22,19 @@ const successful = {
   imUsed: 226,
 };
 
-const redirection = {
+const redirection = <Code>{
   multipleChoices: 300,
   movedPermanently: 301,
   found: 302,
   seeOther: 303,
   notModified: 304,
   useProxy: 305,
-  switchProxy: 306,       // unused / reserved
+  switchProxy: 306, // unused / reserved
   temporaryRedirect: 307,
   permanentRedirect: 308,
 };
 
-const clientError = {
+const clientError = <Code>{
   badRequest: 400,
   unauthorized: 401,
   paymentRequired: 402,
@@ -62,7 +66,7 @@ const clientError = {
   unavailableForLegalReasons: 451,
 };
 
-const serverError = {
+const serverError = <Code>{
   internalServerError: 500,
   notImplemented: 501,
   badGateway: 502,
@@ -75,7 +79,7 @@ const serverError = {
   networkAuthenticationRequired: 511,
 };
 
-const groups = {
+const groups: { [key: string]: Code } = {
   informational,
   successful,
   redirection,
@@ -83,18 +87,17 @@ const groups = {
   serverError,
 };
 
-const flatten = (obj) => {
-  let result = {};
+const flatten = (obj: { [key: string]: any }): Code => {
+  let result: Code = {};
   for (const key in obj) {
     if (typeof obj[key] === "object" && !Array.isArray(obj[key])) {
-      result = { ...result, ...flatten(obj[key]) }; // Recursively flatten
+      result = { ...result, ...flatten(obj[key]) };
     } else {
-      result[key] = obj[key]; // Copy the key-value pair
+      result[key] = obj[key];
     }
   }
   return result;
 };
 
-
-let codes=flatten(groups);
+let codes: Code = flatten(groups);
 export default codes;
