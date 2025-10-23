@@ -1,5 +1,7 @@
 
-# HTTP Status Codes
+# Res Codes
+
+## HTTP Status Codes
 
 A lightweight, easy-to-use utility to access HTTP status codes and messages in JavaScript. This package provides a simple way to retrieve HTTP status codes and their corresponding messages, making it easier to work with HTTP responses in your applications. 
 
