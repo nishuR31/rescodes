@@ -1,11 +1,13 @@
-const informational = {
-  "continue": 100,
+type Format = Record<string, number>;
+
+const informational: Format = {
+  continue: 100,
   switchingProtocols: 101,
   processing: 102,
   earlyHints: 103,
 };
 
-const successful = {
+const successful: Format = {
   ok: 200,
   created: 201,
   accepted: 202,
@@ -18,19 +20,19 @@ const successful = {
   imUsed: 226,
 };
 
-const redirection = {
+const redirection: Format = {
   multipleChoices: 300,
   movedPermanently: 301,
   found: 302,
   seeOther: 303,
   notModified: 304,
   useProxy: 305,
-  switchProxy: 306,       // unused / reserved
+  switchProxy: 306, // unused / reserved
   temporaryRedirect: 307,
   permanentRedirect: 308,
 };
 
-const clientError = {
+const clientError: Format = {
   badRequest: 400,
   unauthorized: 401,
   paymentRequired: 402,
@@ -62,7 +64,7 @@ const clientError = {
   unavailableForLegalReasons: 451,
 };
 
-const serverError = {
+const serverError: Format = {
   internalServerError: 500,
   notImplemented: 501,
   badGateway: 502,
@@ -75,7 +77,7 @@ const serverError = {
   networkAuthenticationRequired: 511,
 };
 
-const groups = {
+const groups: Object = {
   informational,
   successful,
   redirection,
@@ -83,8 +85,8 @@ const groups = {
   serverError,
 };
 
-const flatten = (obj) => {
-  let result = {};
+const flatten: (obj: Record<string, any>) => Format = (obj) => {
+  let result: Format = {};
   for (const key in obj) {
     if (typeof obj[key] === "object" && !Array.isArray(obj[key])) {
       result = { ...result, ...flatten(obj[key]) }; // Recursively flatten
@@ -92,9 +94,8 @@ const flatten = (obj) => {
       result[key] = obj[key]; // Copy the key-value pair
     }
   }
-  return result;
+  return <Format>result;
 };
 
-
-let codes=flatten(groups);
+let codes = flatten(groups);
 export default codes;
