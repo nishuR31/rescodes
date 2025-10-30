@@ -1,4 +1,4 @@
-import codes from "./codes.ts";
+import codes from "./codes.js";
 
 const reverseMap = Object.fromEntries(
   Object.entries(codes).map(([key, value])=> [value, key])
@@ -14,4 +14,3 @@ export default {
   msg,
   code,
 };
-

@@ -40,9 +40,9 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "forceConsistentCasingInFileNames": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "noEmit": false
   }
 }
