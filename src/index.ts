@@ -5,9 +5,9 @@ const reverseMap = Object.fromEntries(
 );
 
 const msg: (T: number) => string = (code) =>
-  reverseMap[code] ?? "unknownStatus";
+  reverseMap[code] ?? "UnknownStatuscode";
 const code: (T: string) => number | string = (name) =>
-  codes[name] ?? "Unknown code";
+  codes[name] ?? "UnknownDtatusMessage";
 
 export default {
   ...codes,
@@ -15,4 +15,3 @@ export default {
   code,
 };
 
-// console.log(msg(200),code("ok"))
