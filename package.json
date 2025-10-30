@@ -1,12 +1,47 @@
 {
   "name": "rescodes",
   "version": "1.0.0",
-  "description": "A simple npm util providing functionalities for http status codes and messages.",
-  "license": "ISC",
-  "author": "",
+  "description": "A TypeScript utility providing HTTP status codes and messages.",
+  "license": "MIT",
+  "author": "Nishan Rajak <nishan.developer.dev@gmail.com>",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prestart": "npm run build",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "typescript": "^5.9.3",
+    "tsx": "^4.20.6",
+    "eslint": "^8.46.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishuR31/rescodes.git"
+  },
+  "keywords": [
+    "http",
+    "status-codes",
+    "typescript",
+    "npm",
+    "util"
+  ],
+  "bugs": {
+    "url": "https://github.com/nishuR31/rescodes/issues"
+  },
+  "homepage": "https://github.com/nishuR31/rescodes#readme"
 }
