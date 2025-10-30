@@ -7,8 +7,8 @@ A lightweight, easy-to-use utility to access HTTP status codes and messages in J
 
 ## Features
 
-- Access HTTP status codes by their common name (e.g., `http.ok`, `http.notFound`).
-- Retrieve the status message for a given code with `http.msg(code)`.
+- Access HTTP status codes by their common name (e.g., `status.ok`, `status.notFound`).
+- Retrieve the status message for a given code with `importName.msg(code)`.
 - Get the HTTP status code for a given message with `http.code("message")`.
 - Supports **all** standard HTTP status codes from the IANA registry.
 - It uses camel case, easy to adapt as per JS devs and other camel case users.
@@ -18,11 +18,11 @@ A lightweight, easy-to-use utility to access HTTP status codes and messages in J
 To install the package via npm, run the following command:
 
 ```bash
-npm install statusCodes
+npm install status-map
 ```
 or
 ```bash
-npm i statusCodes
+npm i status-map
 ```
 
 ## Usage
@@ -32,13 +32,21 @@ npm i statusCodes
 You can directly access any HTTP status code using the camelCase name of the status:
 
 ```js
-const http = require('statusCodes');
-// import http from "statusCodes";
-
+const http = require('status-map');
 // Access status codes directly by name
 console.log(http.ok);                // 200
 console.log(http.notFound);          // 404
 console.log(http.internalServerError); // 500
+```
+
+or 
+
+```js
+import {code,msg} from 'status-map';
+// Access status codes directly by name
+console.log(code("ok"));                // 200
+console.log(code("notFound"));          // 404
+console.log(msg(500)); //   internalServerError
 ```
 
 ### Access status messages by code
@@ -63,10 +71,10 @@ console.log(http.code("internalServerError")); // 500
 
 ### Invalid Input Handling
 
-For invalid codes or messages, the functions return `null`:
+For invalid codes or messages, the functions return `UnknownStatusCode`/`UnknownStatusMessage`:
 
 ```js
-console.log(http.code("invalid")); // null
+console.log(http.code("invalid")); // unknownStatusMessage
 console.log(http.msg(9999));       // null
 ```
 
