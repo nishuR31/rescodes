@@ -1,5 +1,5 @@
 
-# Res Codes
+# Status Map
 
 ## HTTP Status Codes
 
