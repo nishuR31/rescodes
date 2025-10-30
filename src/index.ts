@@ -7,7 +7,7 @@ const reverseMap = Object.fromEntries(
 const msg: (T: number) => string = (code) =>
   reverseMap[code] ?? "UnknownStatuscode";
 const code: (T: string) => number | string = (name) =>
-  codes[name] ?? "UnknownDtatusMessage";
+  codes[name] ?? "UnknownStatusMessage";
 
 export default {
   ...codes,
