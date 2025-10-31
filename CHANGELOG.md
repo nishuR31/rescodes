@@ -7,7 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.0.2] - 2025-10-30 (Pending Release)
+## [1.0.4] - 2025-11-01 
+### Added / Updated
+- Prepared new version with minor improvements and optimizations in internal code.
+- Verified that compiled JS + `.d.ts` are included properly in `dist/`.
+- Ensured all internal ESM imports have `.js` extensions for Node `NodeNext`/`Node16`.
+
+### Notes
+- This was a **module only version**, fixing packaging, failed cjs imports and internal import issues from 1.0.3.
+
+---
+
+## [1.0.3] - 2025-11-01 
+### Added / Updated
+- Prepared new version with minor improvements and optimizations in internal code.
+- Verified that compiled JS + `.d.ts` are included properly in `dist/`.
+- Ensured all internal CJS and ESM imports have `.js`/`.cjs` extensions for Node `Common` and `NodeNext`/`Node16`.
+
+### Notes
+- This was a **failed version**, fixing packaging and internal import issues from 1.0.2.
+- The commonjs, required imports are not working.
+
+---
+
+
+## [1.0.2] - 2025-10-30
 ### Added / Updated
 - Prepared new version with minor improvements and optimizations in internal code.
 - Verified that compiled JS + `.d.ts` are included properly in `dist/`.
@@ -41,4 +65,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * First published version.
 * Included only TypeScript declaration files (`.d.ts`), missing compiled JavaScript.
 * Basic structure and utility functions for HTTP status code messages.
-

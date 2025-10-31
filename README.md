@@ -3,7 +3,7 @@
 
 ## HTTP Status Codes
 
-A lightweight, easy-to-use utility to access HTTP status codes and messages in JavaScript. This package provides a simple way to retrieve HTTP status codes and their corresponding messages, making it easier to work with HTTP responses in your applications. 
+A lightweight,module type easy-to-use utility to access HTTP status codes and messages in JavaScript. This package provides a simple way to retrieve HTTP status codes and their corresponding messages, making it easier to work with HTTP responses in your applications. 
 
 ## Features
 
@@ -31,15 +31,6 @@ npm i status-map
 
 You can directly access any HTTP status code using the camelCase name of the status:
 
-```js
-const http = require('status-map');
-// Access status codes directly by name
-console.log(http.ok);                // 200
-console.log(http.notFound);          // 404
-console.log(http.internalServerError); // 500
-```
-
-or 
 
 ```js
 import {code,msg} from 'status-map';
@@ -94,5 +85,3 @@ console.log(http.msg(9999));       // null
 Feel free to contribute, create issues, or suggest enhancements via GitHub!
 
 Happy Diwali..
-
-

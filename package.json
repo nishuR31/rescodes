@@ -1,12 +1,12 @@
 {
   "name": "status-map",
-  "version": "1.0.2",
-  "description": "A TypeScript utility providing HTTP status codes and messages.",
+  "version": "1.0.4",
+  "description": "A module type only java/typescript utility providing HTTP status codes and messages.",
   "license": "MIT",
-  "author": "Nishan Rajak <nishangithub@gmail.com>",
+  "author": "Nishan <nishangithub@gmail.com>",
   "type": "module",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/type/index.d.ts",
   "files": [
     "dist"
   ],
